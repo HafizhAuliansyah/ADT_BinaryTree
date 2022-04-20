@@ -1,10 +1,17 @@
 #include "BinaryTree.h"
 
 void bCreate(bTree *tree){
-    return;
+    *tree.root = NULL;
 }
 nAddress bCreateNode(infotype x){
-    return;
+    nAddress newNode;
+    newNode = (nAddress) malloc(sizeof(TreeNode));
+    if(newNode != NULL){
+    	newNode->info = x;
+    	newNode->left = NULL;
+    	newNode->right = NULL;
+	}
+	return newNode
 }
 void bInsert(bTree *root, nAddress parent, infotype x){
     return;
