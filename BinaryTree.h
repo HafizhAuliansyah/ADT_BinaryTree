@@ -1,5 +1,7 @@
 #ifndef btree_h
 #define btree_h
+#include <stdio.h>
+#include <stdlib.h>
 
 /*
 File		: BinaryTree.h
@@ -49,6 +51,12 @@ void bDelete(bTree *tree, nAddress *nodeDel);
 /* Depth Tree */
 /* Mengembalikan Depth dari tree */
 int bDepth(nAddress root);
+
+/* ---------------- TRAVERSAL Tree ---------------- */
+void bPost(nAddress root); // Postorder traversing
+void bPre(nAddress root); // Preorder traversing
+void bIn(nAddress root); // Inorder traversing
+void bLevelOrder(nAddress root,int curLevel, int desLevel);
 
 /* PRINT TREE */
 /* Menampilkan isi tree */
