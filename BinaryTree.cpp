@@ -13,6 +13,7 @@ nAddress bCreateNode(infotype x){
 	}
 	return newNode
 }
+// Start Hafizh
 void bInsert(bTree *root, nAddress parent, infotype x){
     return;
 }
@@ -28,6 +29,8 @@ void bDelete(bTree *tree, nAddress *nodeDel){
 int bDepth(nAddress root){
     return;
 }
+// End Hafizh
+// Start Salman 
 void bPost(nAddress root){
     return;
 }
@@ -43,3 +46,4 @@ void bLevelOrder(nAddress root,int curLevel, int desLevel){
 void bPrint(nAddress, char tab[]){
     return;
 }
+// End Salman
