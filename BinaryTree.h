@@ -2,7 +2,8 @@
 #define btree_h
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <conio.h>
+#include <iostream>
 /*
 File		: BinaryTree.h
 Deskripsi	: Spesifikasi program ADT Binary Tree Dinamis
@@ -32,13 +33,22 @@ void bCreate(bTree *tree);
 /* Mengembalikan address node baru yang sudah ter-Alokasi */
 nAddress bCreateNode(infotype x);
 
+/* Check Jika Tree Kosong */
+/* Mengembalikan true jika root tree kosong */
+bool isTreeEmpty(bTree tree);
+
+// HAFIZH
 /* Insert Node */
-/* Menambahkan node baru sesuai parent yang dituju */
-void bInsert(bTree *root, nAddress parent, infotype x);
+/* Menambahkan node baru sesuai parent dan posisi yang dituju */
+void bInsert(bTree *root, nAddress parent, char position ,infotype x);
 
 /* Seach Node */
 /* Mengembalikan address node yang dicari */
-nAddress bSearch(bTree root, infotype src);
+nAddress bSearch(nAddress root, infotype src);
+
+/* Seach Parent */
+/* Mengembalikan parent dari adress node child yang dicari */
+nAddress bSearchParent(nAddress root, nAddress searchChild);
 
 /* Upgrade Node */
 /* Upgrade Parent dari node tertentu */
@@ -52,6 +62,7 @@ void bDelete(bTree *tree, nAddress *nodeDel);
 /* Mengembalikan Depth dari tree */
 int bDepth(nAddress root);
 
+// SALMAN
 /* ---------------- TRAVERSAL Tree ---------------- */
 void bPost(nAddress root); // Postorder traversing
 void bPre(nAddress root); // Preorder traversing
