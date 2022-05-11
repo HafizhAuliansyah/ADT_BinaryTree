@@ -85,9 +85,9 @@ void bDelete(bTree *tree, nAddress *nodeDel){
 		nParent = bSearchParent(tree->root, nCurrent);
 		if(nParent != NULL){
 			if(nParent->left == nCurrent){
-				nParent->left == NULL;
+				nParent->left = NULL;
 			}else if(nParent->right == nCurrent){
-				nParent->right == NULL;
+				nParent->right = NULL;
 			}else{
 				printf("GAGAL DELETE !! \n");
 				return;
