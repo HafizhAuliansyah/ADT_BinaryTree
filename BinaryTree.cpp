@@ -115,11 +115,11 @@ int bDepth(nAddress root){
 // TRAVERSAL TREE
 void bPost(nAddress root) //Post order untuk memproses simpul anak sebelah kiri dilanjukan ke sebelah kanan
 {
-	if (root!=NULL){
+	if (root->left=NULL){
 		bPost(root->left);
 		printf("%d ", root->info);
 	}
-		if (root.nb=NULL){
+	else{
 			bPost(root->right);
 			printf("%d ", root->info);
 		}
