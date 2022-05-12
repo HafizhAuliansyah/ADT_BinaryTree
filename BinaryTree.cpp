@@ -115,15 +115,12 @@ int bDepth(nAddress root){
 // TRAVERSAL TREE
 void bPost(nAddress root) //Post order untuk memproses simpul anak sebelah kiri dilanjukan ke sebelah kanan
 {
-	if (root->left=NULL){
+	if (root!=NULL){
 		bPost(root->left);
+		bPost(root->right);
 		printf("%d ", root->info);
+		
 	}
-	else{
-			bPost(root->right);
-			printf("%d ", root->info);
-		}
-    return;
 }
 void bPre(nAddress root) //PreOrder
 {
@@ -131,38 +128,38 @@ void bPre(nAddress root) //PreOrder
 		printf("%d ", root->info);
 		bPre(root->left);
 		bPre(root->right);
+	}
     return;
 }
 void bIn(nAddress root) //Inorder
 {
 	if (root!=NULL){
 		bIn(root->left);
-		if (root->left==NULL) 
-			printf("%d ", root->info);
-		if (root->right!=NULL)
-			if (root->parent->left==root)
-				printf("%d ", root->parent->info);
+		printf("%d ", root->info);
 		bIn(root->right);
-    return;
+	}
 }
-void bLevelOrder(nAddress root,int curLevel, int desLevel){
+void bLevelOrder(nAddress root,int level){
 	if(root!=NULL)
 	{
-		if(curLevel==desLevel)
-			printf("%d  ",root->info);
-		bLevelOrder(root->left,curLevel+1,desLevel);
-		bLevelOrder(root->right,curLevel,desLevel);
+		if(level == 0){
+			printf("%d ", root->info);
+		}
+		if(level > 0){
+			bLevelOrder(root->left, level-1);
+			bLevelOrder(root->right, level-1);
+		}
 	}
-    return;
 }
-void bPrint(nAddress, char tab[]){
+void bPrint(nAddress node, char tab[]){
 	char tempTab[255];
 	strcpy(tempTab, tab);
 	strcat(tempTab, "-");
 	if (node!=NULL){
 		printf("%s%d\n",tab,node->info);
-		nbPrint(node->left,tempTab);
-		nbPrint(node->right,tab);
+		bPrint(node->left,tempTab);
+		bPrint(node->right,tab);
+	}
     return;
 }
 // End Salman

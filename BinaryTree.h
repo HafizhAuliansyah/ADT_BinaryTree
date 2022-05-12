@@ -2,6 +2,7 @@
 #define btree_h
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <conio.h>
 #include <iostream>
 /*
@@ -67,10 +68,10 @@ int bDepth(nAddress root);
 void bPost(nAddress root); // Postorder traversing
 void bPre(nAddress root); // Preorder traversing
 void bIn(nAddress root); // Inorder traversing
-void bLevelOrder(nAddress root,int curLevel, int desLevel);
+void bLevelOrder(nAddress root,int level);
 
 /* PRINT TREE */
 /* Menampilkan isi tree */
-void bPrint(nAddress, char tab[]);
+void bPrint(nAddress node, char tab[]);
 
 #endif

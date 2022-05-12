@@ -5,13 +5,21 @@ int main() {
 	bTree tree;
 	bCreate(&tree);
 	int pilih;
+	char btm;
+	char str[]="";
 	do{
 		system("cls");
 		printf("1. Insert Node\n");
 		printf("2. Delete Node\n");
 		printf("3. Search Node\n");
 		printf("4. Search Parent Node\n");
-		printf("9. Exit\n");
+		printf("5. Tampilkan Depth Tree\n");
+		printf("TRAVERSAL \n");
+		printf("6. Preorder\n");
+		printf("7. Postorder\n");
+		printf("8. Inorder\n");
+		printf("9. Levelorder\n\n");
+		printf("10. Print Tree\n");
 		printf("\n");
 		printf("Masukkan Pilihan	: ");
 		fflush(stdin);
@@ -84,11 +92,66 @@ int main() {
 					printf("DATA TIDAK ADA");
 				}
 				break;
+			case 5:
+				if(isTreeEmpty(tree)){
+					printf("TREE KOSONG !!!");
+				}else{
+					int depth = bDepth(tree.root);
+					printf(" Depth Tree :  %d ", depth);
+				}
+				break;
+			case 6:
+				if(isTreeEmpty(tree)){
+					printf("TREE KOSONG !!!");
+				}else{
+					printf("Hasil Traversal Pre Order : ");
+					bPre(tree.root);	
+				}
+				
+				break;
+			case 7:
+				if(isTreeEmpty(tree)){
+					printf("TREE KOSONG !!!");
+				}else{
+					printf("Hasil Traversal Post Order : ");
+					bPost(tree.root);	
+				}
+				break;
+			case 8:
+				if(isTreeEmpty(tree)){
+					printf("TREE KOSONG !!!");
+				}else{
+					printf("Hasil Traversal In Order : ");
+					bIn(tree.root);	
+				}
+				break;
+			case 9:
+				if(isTreeEmpty(tree)){
+					printf("TREE KOSONG !!!");
+				}else{
+					printf("Hasil Traversal Level Order : ");
+					for(int i=0;i<=bDepth(tree.root);i++)
+					{
+						bLevelOrder(tree.root,i);
+					}
+				}
+				break;
+			case 10:
+				if(isTreeEmpty(tree)){
+					printf("TREE KOSONG !!!");
+				}else{
+					bPrint(tree.root, str);	
+				}
 			default:
 				break;
 		}
-		getche();
-	}while(pilih != 9);
+		printf("\n");
+		printf("=======================\n");
+		printf("Kembali ke menu ? [Y/N] : ");
+		fflush(stdin);
+		btm = getche();
+		btm = toupper(btm);
+	}while(btm == 'Y');
 	exit(0);
 	return 0;
 }
