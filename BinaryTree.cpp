@@ -120,7 +120,7 @@ void bPost(nAddress root) //Post order untuk memproses simpul anak sebelah kiri 
 		printf("%d ", root->info);
 	}
 		if (root.nb=NULL){
-			bPost(root->nb);
+			bPost(root->right);
 			printf("%d ", root->info);
 		}
     return;
@@ -129,8 +129,8 @@ void bPre(nAddress root) //PreOrder
 {
 	if (root!=NULL){
 		printf("%d ", root->info);
-		bPre(root->fs);
-		bPre(root->nb);
+		bPre(root->left);
+		bPre(root->right);
     return;
 }
 void bIn(nAddress root) //Inorder
