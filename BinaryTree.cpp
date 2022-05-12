@@ -112,16 +112,47 @@ int bDepth(nAddress root){
 }
 // End Hafizh
 // Start Salman 
-void bPost(nAddress root){
+// TRAVERSAL TREE
+void bPost(nAddress root) //Post order untuk memproses simpul anak sebelah kiri dilanjukan ke sebelah kanan
+{
+	if (root!=NULL){
+		bPost(root->left);
+		printf("%d ", root->info);
+	}
+		if (root.nb=NULL){
+			bPost(root->nb);
+			printf("%d ", root->info);
+		}
     return;
 }
-void bPre(nAddress root){
+void bPre(nAddress root) //PreOrder
+{
+	if (root!=NULL){
+		printf("%d ", root->info);
+		bPre(root->fs);
+		bPre(root->nb);
     return;
 }
-void bIn(nAddress root){
+void bIn(nAddress root) //Inorder
+{
+	if (root!=NULL){
+		bIn(root->left);
+		if (root->left==NULL) 
+			printf("%d ", root->info);
+		if (root->right!=NULL)
+			if (root->parent->left==root)
+				printf("%d ", root->parent->info);
+		bIn(root->right);
     return;
 }
 void bLevelOrder(nAddress root,int curLevel, int desLevel){
+	if(root!=NULL)
+	{
+		if(curLevel==desLevel)
+			printf("%d  ",root->info);
+		bLevelOrder(root->left,curLevel+1,desLevel);
+		bLevelOrder(root->right,curLevel,desLevel);
+	}
     return;
 }
 void bPrint(nAddress, char tab[]){
