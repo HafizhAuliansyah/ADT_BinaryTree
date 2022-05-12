@@ -156,6 +156,13 @@ void bLevelOrder(nAddress root,int curLevel, int desLevel){
     return;
 }
 void bPrint(nAddress, char tab[]){
+	char tempTab[255];
+	strcpy(tempTab, tab);
+	strcat(tempTab, "-");
+	if (node!=NULL){
+		printf("%s%d\n",tab,node->info);
+		nbPrint(node->left,tempTab);
+		nbPrint(node->right,tab);
     return;
 }
 // End Salman
