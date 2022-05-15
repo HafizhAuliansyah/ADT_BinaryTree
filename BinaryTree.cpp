@@ -158,8 +158,7 @@ void bPrint(nAddress node, char tab[]){
 	if (node!=NULL){
 		printf("%s%d\n",tab,node->info);
 		bPrint(node->left,tempTab);
-		bPrint(node->right,tab);
+		bPrint(node->right,tempTab);
 	}
-    return;
 }
 // End Salman
